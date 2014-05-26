@@ -1,9 +1,9 @@
-* cookie-pass
+# cookie-pass
 
 pass a cookie information from response(`http.incomingMessage`) to request option.
 
 
-** synopsis
+## synopsis
 
 ```js
 var cookiepass = require('cookie-pass')
@@ -33,21 +33,29 @@ http.request(opt, function onRes (res) {
 }).end(requestData)
 ```
 
-** methods
+## function
+
+### cookiepass(http.incomingMessage)
 
 ```js
 var cookiepass = requrie('cookie-pass')
 var cookie = cookiepass(http.incomingMessage)
 ```
 
-*** cookiepass(http.incomingMessage)
-
 return a new cookie object (with `.pass()` and `.merge()`) oprating on `http.request'.
 
-*** cookie.pass({request_option})
 
-*** cookie.merge(http.incomingMessage)
+## methods
 
-** license
+### cookie.pass({request_option})
+
+a cookie object pass cookie informations to `request option`.
+(add `request_option.headers.cookie`.)
+
+### cookie.merge(http.incomingMessage)
+
+a cookie object get cookie informations from `http.incomingMessage.headers['sec-cookie']` and parse it.
+
+## license
 
 MIT
