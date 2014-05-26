@@ -76,12 +76,16 @@ function pass (reqopt) {
 
 }
 
-function parse (res) {
+function parse (res, _req) {
     var def = {cookies: {}, cookiesStrict: {}}
     // undefined or null
     if ( null == res || null == res.headers || null == res.headers['set-cookie']) return def
 
-    var uri = url.parse(res.url)
+    if ('string' === typeof _req) req = url.parse(_req)
+    if (! res.url && null == _req) throw new TypeError('"_req" should be "url string" or "url object".')
+
+    //var uri = url.parse(res.url)
+    var uri = res.url ? url.parse(res.url) : req
     var hostname  = uri.hostname || (uri.host ? uri.host.split(':')[0] : '')
     var setCookie = res.headers['set-cookie']
 
@@ -128,16 +132,16 @@ function parseCookieStr (str) {
 
 var cookie = {
     pass: pass
-  , merge: function (res) {
-        var me = parse(res)
+  , merge: function (res, req) {
+        var me = parse(res, req)
         merge(this.cookies, me.cookies)
         merge(this.cookiesStrict, me.cookiesStrict)
         return this
     }
 }
 
-module.exports = function create (res) {
-    var cookies = parse(res)
+module.exports = function create (res, req) {
+    var cookies = parse(res, req)
     return Object.create(cookie, {
         cookies: {
             value: cookies.cookies

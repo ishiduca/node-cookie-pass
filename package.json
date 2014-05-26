@@ -1,6 +1,6 @@
 {
   "name": "cookie-pass",
-  "version": "0.0.2",
+  "version": "0.1.0",
   "description": "pass \"cookie\" informations from http.incomingMessage object to a option of http.ClientRequest",
   "main": "index.js",
   "scripts": {
