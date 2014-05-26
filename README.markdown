@@ -33,7 +33,7 @@ http.request(opt, function onRes (res) {
 }).end(requestData)
 ```
 
-## function
+## exports
 
 ### cookiepass(http.incomingMessage)
 
