@@ -1,14 +1,21 @@
 {
   "name": "cookie-pass",
   "version": "0.0.1",
-  "description": "pass \"cookie\" from http.incomingMessage object to a option of http.ClientRequest",
+  "description": "pass \"cookie\" informations from http.incomingMessage object to a option of http.ClientRequest",
   "main": "index.js",
   "scripts": {
     "test": "tap t/*.js"
   },
   "keywords": [
-    "cookie"
+    "cookie",
+    "cookies",
+    "set-cookie",
+    "cookiejar"
   ],
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/ishiduca/node-cookie-pass.git"
+  },
   "devDependencies": {
     "tape": "~2.13.x"
   },
