@@ -42,7 +42,7 @@ var cookiepass = requrie('cookie-pass')
 var cookie = cookiepass(http.incomingMessage)
 ```
 
-return a new cookie object (with `.pass()` and `.merge()`) oprating on `http.request'.
+return a new cookie object (with `.pass()` and `.merge()`) oprating on `http.request`.
 
 
 ## methods
