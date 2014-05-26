@@ -1,10 +1,10 @@
 {
   "name": "cookie-pass",
   "version": "0.0.0",
-  "description": "pass \"cookie\" from http.incomingMessage object to a option of http.ClientReuest",
-  "main": "index.js:",
+  "description": "pass \"cookie\" from http.incomingMessage object to a option of http.ClientRequest",
+  "main": "index.js",
   "scripts": {
-    "test": "tap t/*js"
+    "test": "tap t/*.js"
   },
   "keywords": [
     "cookie"
