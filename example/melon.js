@@ -71,7 +71,7 @@ d.run(function () {
                         console.log(res.statusCode)
                         console.log(res.headers)
 
-                        res.pipe(filed('melon.html'))
+                        res.pipe(process.stdout)
                     })
                     d.add(req)
                 })

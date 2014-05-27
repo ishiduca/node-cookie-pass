@@ -26,7 +26,7 @@ http.request(login, function onRes (res) {
     var cookie = cookiepass(res, login).pass(mypage)
 
     http.get(mypage, function onRes2 (res) {
-		var private = url.parse('http://hoge.org/mypage/private')
+        var private = url.parse('http://hoge.org/mypage/private')
         cookie.merge(res, mypage).pass(private)
 
         ...
