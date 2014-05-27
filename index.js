@@ -81,11 +81,11 @@ function parse (res, _req) {
     // undefined or null
     if ( null == res || null == res.headers || null == res.headers['set-cookie']) return def
 
-    if ('string' === typeof _req) req = url.parse(_req)
+    if ('string' === typeof _req) _req = url.parse(_req)
     if (! res.url && null == _req) throw new TypeError('"_req" should be "url string" or "url object".')
 
     //var uri = url.parse(res.url)
-    var uri = res.url ? url.parse(res.url) : req
+    var uri = res.url ? url.parse(res.url) : _req
     var hostname  = uri.hostname || (uri.host ? uri.host.split(':')[0] : '')
     var setCookie = res.headers['set-cookie']
 
