@@ -54,9 +54,7 @@ function pass (reqopt) {
         _help(cookiesStrict, _domain)
     })
 
-    reqopt.headers.cookie = cookie.join('; ')
-
-    return this
+    return (reqopt.headers.cookie = cookie.join('; '))
 
     function _help (cookies, _domain) {
         Object.keys(cookies[_domain]).forEach(function (_path) {
@@ -64,8 +62,8 @@ function pass (reqopt) {
             Object.keys(cookies[_domain][_path]).forEach(function (_key) {
                 var c = cookies[_domain][_path][_key]
                 if (null == c) return
-                if (c._expires && (now > Date.parse(c._expires))) {
-                //if (c._expires && (now > Number(c._expires))) {
+                if (now > Date.parse(c._expires)) {
+                //if (c._expires && (now > Date.parse(c._expires))) {
                     cookies[_domain][_path][_key] = null
                     return
                 }

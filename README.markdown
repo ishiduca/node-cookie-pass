@@ -54,6 +54,7 @@ return a new cookie object (with `.pass()` and `.merge()`) oprating on `http.req
 
 a cookie object pass cookie informations to `request option`.
 (add `request_option.headers.cookie`.)
+return cookie string.
 
 ### cookie.merge(http.incomingMessage, requestOption)
 
